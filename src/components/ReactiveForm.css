@@ -1,0 +1,19 @@
+.inline {
+    display: flex;
+}
+
+.inline .jagah {
+    margin-right: 1rem;
+}
+
+.space {
+    margin-right: 2rem;
+}
+
+.erorr {
+    color: orangered;
+}
+
+.optionsColor {
+    color: indigo;
+}
