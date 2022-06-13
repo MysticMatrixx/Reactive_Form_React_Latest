@@ -7,8 +7,8 @@ const TextInput = ({
     }: AbstractControl) => (
         <>
             <div>
-                <label className='space'>{label} : </label>
-                <input placeholder={placeholder} {...handler()}/>
+                <label className='left_align'>{label}</label><br/>
+                <input className={'input_field'} placeholder={placeholder} {...handler()}/>
             </div>
         </>
     );

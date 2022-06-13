@@ -6,7 +6,7 @@ const RadioButton = ({handler}: AbstractControl) => (
     <>
         <div className='inline'>
             <div>
-                <label className='jagah' >Gender : </label>
+                <label className='jagah'>Gender</label>
             </div>
                 <div className='inline'>
                 <div>

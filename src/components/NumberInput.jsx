@@ -9,8 +9,8 @@ const TextInput = ({
     }: AbstractControl) => (
         <>
             <div>
-                <label className='space'>{label} : </label>
-                <input placeholder={placeholder} maxLength={maxLength} minLength={minLength} {...handler('tel')}/>
+                <label className='left_align'>{label}</label><br/>
+                <input className={'input_field'} placeholder={placeholder} maxLength={maxLength} minLength={minLength} {...handler('tel')}/>
                 <div className='erorr'>
                         {touched && hasError('required') && message}
                 </div>

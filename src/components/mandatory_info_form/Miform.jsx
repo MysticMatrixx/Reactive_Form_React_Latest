@@ -54,7 +54,7 @@ class SimpleForm extends React.Component {
         district: '',
         religion: '',
         whatsapp_no: ['', Validators.pattern('^[5-9][0-9]{9}$')],
-        alternate_no: ['', Validators.pattern('^[5-9][0-9]{9}$')], // SIR JI BTAENGE
+        alternative_no: ['', Validators.pattern('^[5-9][0-9]{9}$')], // SIR JI BTAENGE
         email: ['', Validators.email],
         aadhaar_number: ['', Validators.pattern('^(0 |[1-9 ][0-9 ]*)$')],
         voter_id: '',
@@ -76,14 +76,25 @@ class SimpleForm extends React.Component {
 }
 
 
-const options = [
+const category = [
     {id: '1', name: 'Chocolate'},
     {id: '2', name: 'Strawberry'},
     {id: '3', name: 'Vanilla'}
 ];
 
 export default function Miform() {
-    const [designation, setDesignation] = useState([]);
+
+    const designation = [];
+    // const category = [];
+    const caste = [];
+    const qualification = [];
+    const profession = [];
+    const mandal = [];
+    const native_state = [];
+    const district = [];
+    const religion = [];
+
+    // const [designation, setDesignation] = useState([]);
 
     // async function designationListFetch(url = '', data = {}) {
     //     let response = await fetch(url, {
@@ -104,13 +115,13 @@ export default function Miform() {
     //     setDesignation(result.data);
     // }
 
-    useEffect(() => {
-        // designationListFetch(BASE_URL + designation_url, payload);
+    // useEffect(() => {
+    //     // designationListFetch(BASE_URL + designation_url, payload);
+    //
+    // }, [])
 
-    }, [])
-
-    console.log(designation);
-
+    // console.log(designation);
+    //
     return (
         <div className="App">
             <header className="App-header">
@@ -131,11 +142,10 @@ export default function Miform() {
                             />
 
                             <FieldControl
-                                name='name'
+                                name='panna_no'
                                 render={TextInput}
                                 meta={{
-                                    label: 'Name',
-                                    placeholder: 'Enter your name',
+                                    label: 'Panna No.',
                                 }}
                             />
 
@@ -152,27 +162,192 @@ export default function Miform() {
                                 }}
                             />
 
+                            <FieldControl
+                                name='name'
+                                render={TextInput}
+                                meta={{
+                                    label: 'Name',
+                                    placeholder: 'Enter your name',
+                                }}
+                            />
+
+                            <FieldControl name='gender' render={RadioButton}/>
+
+                            <FieldControl
+                                name='Category'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Category',
+                                    placeholder: 'Select',
+                                    options: category,
+                                }}
+                            />
+
+                            <FieldControl
+                                name='Caste'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Caste',
+                                    placeholder: 'Select',
+                                    options: caste,
+                                }}
+                            />
+
+                            <FieldControl
+                                name='qualification'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Qualification',
+                                    placeholder: 'Select',
+                                    options: qualification,
+                                }}
+                            />
+
+                            <FieldControl
+                                name='profession'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Profession',
+                                    placeholder: 'Select',
+                                    options: profession,
+                                }}
+                            />
+
                             <FieldControl name='dob' render={({handler}) => (
                                 <>
-                                    <div className='inline'>
-                                        <label className='space'>DOB : </label>
+                                    <div className>
+                                        <label className>DOB</label><br/>
                                         <div>
-                                            <input type={"date"} {...handler()}/>
+                                            <input className='input_field' type={"date"} {...handler()}/>
                                         </div>
                                     </div>
                                 </>
                             )}/>
 
-                            <FieldControl name='gender' render={RadioButton}/>
+                            <FieldControl
+                                name='pincode'
+                                render={TextInput}
+                                meta={{
+                                    label: 'Pin Code',
+                                }}
+                            />
 
                             <FieldControl
-                                name='option'
+                                name='address'
+                                render={TextInput}
+                                meta={{
+                                    label: 'Address',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='mandal'
                                 render={SelectOptions}
                                 meta={{
-                                    label: 'Select',
-                                    placeholder: 'Select',
-                                    options: options,
+                                    label: 'Mandal',
+                                    placeholder: mandal,
                                 }}
+                            />
+
+                            <FieldControl
+                                name='native_state'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Native State',
+                                    placeholder: 'Select',
+                                    options: native_state,
+                                }}
+                            />
+
+                            <FieldControl
+                                name='relation_name'
+                                render={TextInput}
+                                meta={{
+                                    label: "Father's Name",
+                                }}
+                            />
+
+                            <FieldControl
+                                name='district'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'District',
+                                    placeholder: 'Select',
+                                    options: district,
+                                }}
+                            />
+
+                            <FieldControl
+                                name= 'religion'
+                                render={SelectOptions}
+                                meta={{
+                                    label: 'Religion',
+                                    placeholder: 'Select',
+                                    options: religion,
+                                }}
+                            />
+
+                            <FieldControl
+                                name='whatsapp_no'
+                                render={NumberInput}
+                                meta={{
+                                    label: 'Whatsapp No.',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='alternative_no'
+                                render={NumberInput}
+                                meta={{
+                                    label: 'Alternative No.',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='email'
+                                render={TextInput}
+                                meta={{
+                                    label: 'Email',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='aadhaar_number'
+                                render={NumberInput}
+                                meta={{
+                                    label: 'Aadhaar No.',
+                                    minLength: 12,
+                                    maxLength: 12,
+                                    message: 'Enter a valid aadhaar number',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='voter_id'
+                                render={NumberInput}
+                                meta={{
+                                    label: 'Voter No.',
+                                    message: 'Enter a valid voter number',
+                                }}
+                            />
+
+                            <FieldControl
+                                name='ration_card_number'
+                                render={NumberInput}
+                                meta={{
+                                    label: 'Ration Card No.',
+                                    message: 'Enter a valid ration card number'
+                                }}
+                            />
+
+                            <FieldControl
+                                name=''
+                            />
+                            <FieldControl
+                                name=''
+                            />
+                            <FieldControl
+                                name=''
                             />
 
                             <div>

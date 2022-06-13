@@ -11,8 +11,8 @@ const SelectOptions = ({
     meta: { label, options, placeholder, message }
 } : AbstractControl ) => (
     <>
-        <div className='inline'>
-            <label className='space'>{label} : </label>
+        <div className>
+            <label className='left_align'>{label}</label>
             {/*<select className='optionsColor'*/}
             {/*        {...handler()}>*/}
             {/*    {options.map(({ value, label }, index) => <option value={value} >{label}</option>)}*/}
@@ -21,7 +21,7 @@ const SelectOptions = ({
                 getOptionLabel={options => options.name}
                 getOptionValue={options => options.id}
                 placeholder={placeholder}
-                className='optionsColor'
+                className='optionsColor field'
                 options={options}
                 {...handler()}
             />

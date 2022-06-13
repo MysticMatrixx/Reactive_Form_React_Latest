@@ -2,7 +2,37 @@
     display: flex;
 }
 
-.inline .jagah {
+.left_align {
+    margin-left: -13rem;
+}
+
+.input_field {
+    width: 20rem;
+    height: 2rem;
+    /*background: rgba(240, 243, 252, 0.4);*/
+    border: 0.5px solid rgba(236, 236, 248, 0.2);
+    border-radius: 10px;
+    margin-left: 1.1rem;
+}
+
+.field {
+    margin-left: 1.2rem;
+    height: 2rem;
+}
+
+/*.field .css-2613qy-menu option {*/
+/*    width: 20%;*/
+/*}*/
+
+.field .css-1s2u09g-control, .css-1pahdxg-control {
+    width: 20rem;
+    height: 2rem;
+    /*background: rgba(240, 243, 252, 0.4);*/
+    border: 0.5px solid rgba(236, 236, 248, 0.2);
+    border-radius: 10px;
+}
+
+.jagah {
     margin-right: 1rem;
 }
 
